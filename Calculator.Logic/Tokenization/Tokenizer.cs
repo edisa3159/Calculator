@@ -11,7 +11,6 @@ namespace Calculator.Logic.Tokenization
             input = input.Trim(); //remove surrounding whitespaces
             input = Regex.Replace(input, @"\s+", ""); //remove all whitespaces for easier reading
 
-
             // The regex pattern
             string pattern = @"[+\-*/]?\s*([+-]?(?:\d+\.?\d*|\.\d+))\s*[+\-*/]?";
 
