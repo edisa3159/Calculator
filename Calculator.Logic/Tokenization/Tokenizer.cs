@@ -12,7 +12,9 @@ namespace Calculator.Logic.Tokenization
             input = Regex.Replace(input, @"\s+", ""); //remove all whitespaces for easier reading
 
             // The regex pattern
-            string pattern = @"[+\-*/]?\s*([+-]?(?:\d+\.?\d*|\.\d+))\s*[+\-*/]?";
+            string operandPattern = @"[+-]?\d+\.?\d*|\.\d+";
+            string operatorPattern = @"[*/()]|[+\-](?!\d)";
+            string pattern = $"({operandPattern})|({operatorPattern})";
 
             // Find all matches
             MatchCollection matches = Regex.Matches(input, pattern);
@@ -22,11 +24,8 @@ namespace Calculator.Logic.Tokenization
 
             foreach (Match match in matches)
             {
-                if (match.Groups[1].Success)
-                {
-                    string number = match.Groups[1].Value;
-                    Console.WriteLine(number);
-                }
+                    Console.WriteLine(match.Value);
+                            
             }
             Console.WriteLine(input);
             return tokenizedInput;
