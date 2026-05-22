@@ -4,9 +4,9 @@ namespace Calculator.Logic.Tokenization
 {
     public class Tokenizer
     {
-        public string[] tokenizedInput = {};
+        public List<string> tokens;
 
-        public string[] TokenizeInputExpression(string input)
+        public List<string> TokenizeInputExpression(string input)
         {
             input = input.Trim(); //remove surrounding whitespaces
             input = Regex.Replace(input, @"\s+", ""); //remove all whitespaces for easier reading
@@ -24,11 +24,11 @@ namespace Calculator.Logic.Tokenization
 
             foreach (Match match in matches)
             {
-                    Console.WriteLine(match.Value);
-                            
+                tokens.Add(match.Value.ToString());
+                Console.WriteLine(match.Value.ToString());                            
             }
             Console.WriteLine(input);
-            return tokenizedInput;
+            return tokens;
         }
 
     }
