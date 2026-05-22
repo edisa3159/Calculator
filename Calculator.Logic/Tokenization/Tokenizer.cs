@@ -4,7 +4,7 @@ namespace Calculator.Logic.Tokenization
 {
     public class Tokenizer
     {
-        public List<string> tokens;
+        public List<string>? tokens = new List<string>();
 
         public List<string> TokenizeInputExpression(string input)
         {
@@ -27,7 +27,7 @@ namespace Calculator.Logic.Tokenization
                 tokens.Add(match.Value.ToString());
                 Console.WriteLine(match.Value.ToString());                            
             }
-            Console.WriteLine(input);
+            Console.WriteLine(tokens.ToString());
             return tokens;
         }
 
