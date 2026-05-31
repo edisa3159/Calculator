@@ -9,9 +9,7 @@
 
   <ItemGroup>
     <Folder Include="Evaluation\" />
-    <Folder Include="ToPostfix\" />
     <Folder Include="Validation\" />
-	<Folder Include="Shared\" />
   </ItemGroup>
 
 </Project>
