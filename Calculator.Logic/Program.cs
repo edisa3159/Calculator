@@ -1,4 +1,6 @@
-﻿using Calculator.Logic.Tokenization;
+﻿using Calculator.Logic;
+using Calculator.Logic.Shared;
 
-Tokenizer tokenizer = new Tokenizer();
-tokenizer.TokenizeInputExpression("4* 3 + -124");
+List<string> t = Tokenizer.TokenizeInputExpression("4* (3 / +124)--36++2.531*34.21");
+List<Token> m = TokenListCreator.createListOfTokenObjects(t);
+InfixToPostfixConvertor.ConvertInfixToPostfix(m);
